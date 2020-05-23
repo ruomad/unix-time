@@ -110,7 +110,7 @@ size_t
 _patch_strftime(char * __restrict s, size_t maxsize, const char * __restrict format,
     const struct tm * __restrict t)
 {
-#if HAVE__GET_CURRENT_LOCALE
+#if HAVE__GET_CURRENT_LOCALE && !IS_NT61
 	return _patch_strftime_l(s, maxsize, format, t, _get_current_locale());
 #elif HAVE__CREATE_LOCALE && !IS_NT61
 	return _patch_strftime_l(s, maxsize, format, t, _create_locale(LC_TIME, "C"));
