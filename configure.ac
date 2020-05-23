@@ -34,6 +34,9 @@ case $host in
   MINGW??_NT-6.1*)
 	NT61=1
 	;;
+  MSYS_NT-6.1*)
+        NT61=1
+	;;
   *)
 	NT61=0
 	;;
